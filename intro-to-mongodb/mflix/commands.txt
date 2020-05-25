@@ -1,0 +1,8 @@
+For movies_initial.csv dataset:
+mongoimport --type csv --headerline --db mflix --collection movies_initial --host "mflix-shard-0/mflix-shard-00-00-fredv.mongodb.net:27017,mflix-shard-00-01-fredv.mongodb.net:27017,mflix-shard-00-02-fredv.mongodb.net:27017" --authenticationDatabase admin --ssl --username analytics --password analytics-password --file movies_initial.csv
+
+For citibike-tripdata dataset:
+mongoimport --type csv --headerline --db citibike --collection citibike-tripdata --host "mflix-shard-0/mflix-shard-00-00-fredv.mongodb.net:27017,mflix-shard-00-01-fredv.mongodb.net:27017,mflix-shard-00-02-fredv.mongodb.net:27017" --authenticationDatabase admin --ssl --username analytics --password analytics-password --file citibike-tripdata.csv
+
+command template: 
+mongoimport --type csv --headerline --db mflix --collection movies_initial --host "<CLUSTER_NAME>/<SEED_LIST>" --authenticationDatabase admin --ssl --username <USERNAME> --password <PASSWORD> --file <FILENAMEc.sv>
